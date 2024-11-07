@@ -1,21 +1,22 @@
-# "org" ensures this Service is used with the correct Serverless Framework Access Key.
 org: tasinmir20
-# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
 app: test
-# "service" is the name of this project. This will also be added to your AWS resource names.
 service: Test
 
 provider:
     name: aws
     runtime: nodejs20.x
+    timeout: 30
+    environment:
+        DB_URI: ${.env:DB_URI}
 
 functions:
     api:
-        handler: handler.handler
+        handler: app.handler
         events:
             - httpApi: "*"
 
 plugins:
+    - serverless-dotenv-plugin
     - serverless-offline
 
 custom:

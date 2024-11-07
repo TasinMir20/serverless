@@ -3,10 +3,16 @@
 	"version": "1.0.0",
 	"description": "",
 	"scripts": {
+		"deploy": "serverless deploy",
 		"dev": "nodemon --exec serverless offline"
 	},
 	"dependencies": {
+		"cookie-parser": "^1.4.7",
+		"cors": "^2.8.5",
 		"express": "^4.19.2",
+		"mongoose": "^8.8.0",
+		"morgan": "^1.10.0",
+		"serverless-dotenv-plugin": "^6.0.0",
 		"serverless-http": "^3.2.0"
 	},
 	"devDependencies": {
